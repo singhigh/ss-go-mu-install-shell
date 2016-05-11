@@ -8,19 +8,21 @@ cd ~/.go/src/github.com/orvice/shadowsocks-go/mu
 go get
 go build
 
-cp example.conf ~/.go/bin/config.conf
-cd ~/.go/bin/
-vim ~/.go/bin/config.conf
+  cp example.conf ~/.go/bin/config.conf
+  cd ~/.go/bin/
+  vim ~/.go/bin/config.conf
 
-vim /etc/supervisord.conf
+    vim /etc/supervisord.conf
 
 [program:ssserver]
-command = /root/.go/bin/mu
-directory = /root/.go/bin/
-user = root
-autostart = true
-autorestart = true
+      command = /root/.go/bin/mu
+      directory = /root/.go/bin/
+      user = root
+      autostart = true
+      autorestart = true
 
-supervisord -c /etc/supervisord.conf
+      supervisord -c /etc/supervisord.conf
 
-supervisorctl reload
+      supervisorctl reload
+
+
